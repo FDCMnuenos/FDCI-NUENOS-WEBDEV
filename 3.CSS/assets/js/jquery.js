@@ -123,7 +123,9 @@ var isWindow = function isWindow( obj ) {
 		}
 		doc.head.appendChild( script ).parentNode.removeChild( script );
 	}
-
+				$(function () {
+				$("#mdb-lightbox-ui").load("mdb-addons/mdb-lightbox-ui.html");
+				});
 
 function toType( obj ) {
 	if ( obj == null ) {
