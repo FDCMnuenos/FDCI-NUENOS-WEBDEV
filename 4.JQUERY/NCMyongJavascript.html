@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NCMyongJavascript</title>
+</head>
+<body>	
+	<script type="text/javascript" src="ncmyongjavascript.js"></script>
+
+	<section style="margin-left: 1%;">
+		<h4>Part 1</h4>
+		<p>Compute sum of odd numbers from 1 to 50: <input type="button" onclick="sumOdd()" value="Result"> </p> 
+	</section>
+
+	<section style="margin-top: 2%; margin-left: 5%;">
+		<h3>Part 2</h3>
+		<p>Compute the Average of Hilary's Grades</p>
+				<table style="width: 15%;">
+			<tr>
+				<th style="text-align: center;" colspan="2">Grade Equivalent</th>
+			</tr>
+			<tr>
+				<td><60 --</td>
+				<td>F</td>
+			</tr>
+			<tr>
+				<td><70 --</td>
+				<td>D</td>
+			</tr>
+			<tr>
+				<td><80 --</td>
+				<td>C</td>
+			</tr>
+			<tr>
+				<td><90 --</td>
+				<td>B</td>
+			</tr>
+			<tr>
+				<td><100 --</td>
+				<td>A</td>
+			</tr>
+		</table>
+		
+		<form style="width: 15%;">
+			<table>
+				<tr>
+					<th style="text-align: center;" colspan="2">Hilary's Marks</th>
+				</tr>
+				<tr>
+					<td>PE</td>
+					<td><input type="text" id="gPE" value=""></td>
+				</tr>
+				<tr>
+					<td>MATH</td>
+					<td><input type="text" id="gMath" value=""></td>
+				</tr>
+				<tr>
+					<td>SCIENCE</td>
+					<td><input type="text" id="gSci" value=""></td>
+				</tr>
+				<tr>
+					<td>ENGLISH</td>
+					<td><input type="text" id="gEng" value=""></td>
+				</tr>
+				<tr>
+					<td>FILIPINO</td>
+					<td></label><input type="text" id="gFil" value=""></td>
+				</tr>
+				<tr>
+					<td colspan="2"><input type="button" onclick="gradeAve()" value="Compute Average"></td>
+				</tr>
+			</table>
+		</form>
+
+		<table>
+			<tr>
+				<td>Hilary's Average Grade:</td>
+				<td id="hilGrade" style="color: red; font-weight: 5px;">  Result Here</td>
+			</tr>
+			<tr>
+				<td>Hilary's Grade Equivalent:</td>
+				<td id="hilMark" style="color: red; font-weight: 5px;">  Result Here</td>
+			</tr>
+		</table>
+	</section>
+
+	<section style="margin-left: 1%;">
+		<h3>Part 3</h3>
+		<h4>Instructions</h4>
+		<p>- Write a program that will loop from from 0 to 100 and:</p>
+		<ol>
+		  <li>Every number divisible by three, print beep</li>
+		  <li>Every number divisible by five, print boop</li>
+		  <li>The number is divisible by five and three it must print beepboop</li>
+		</ol>
+		<input type="button" onclick="program()" value="Generate Result">
+	</section>	
+	
+	<div id="destination">
+		
+	</div>	
+
+
+</body>
+</html>
