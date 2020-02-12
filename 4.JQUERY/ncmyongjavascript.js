@@ -38,26 +38,40 @@ function gradeAve() {
 
 /*Part 3*/
 function program(){
+		var n = document.getElementById("beepboop");
 		var y = 1;
 		for (y=1; y<=100; y++){
 			if (y%3==0 && y%5==0){
-				document.writeln(y + "Beepboop" + "<br>");
+				n.append(y + "Beepboop");
+				var br = document.createElement('br');
+				n.append(br);
 			} else if (y%3==0) {
-				document.writeln(y + "Beep" + "<br>");
+				n.append(y + "Beep");
+				var br = document.createElement('br');
+				n.append(br);
 			} else if (y%5==0) {
-				document.writeln(y + "Boop"+ "<br>");
+				n.append(y + "Boop");
+				var br = document.createElement('br');
+				n.append(br);				
 			}
 			else{
-				document.writeln(y + "<br>");
+				n.append(y);
+				var br = document.createElement('br');
+				n.append(br);
 			}
+
 		} 
 	}
 
 /*Part 4*/
-		var d = document.getElementById("destination");
+function nestLoops(){
+	var d = document.getElementById("nestLoop");
 		for (var o = 0; o<5; o++){
 			for(var i = o; i >=0; i--){
-				document.write(" * ");
+				d.append(" * ");
 			}
-				document.write("<br/>");
+			var br = document.createElement('br');
+			d.append(br);
+			
 		}
+	}
