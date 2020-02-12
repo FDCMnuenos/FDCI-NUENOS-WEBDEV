@@ -66,8 +66,8 @@ function program(){
 /*Part 4*/
 function nestLoops(){
 	var d = document.getElementById("nestLoop");
-		for (var o = 0; o<5; o++){
-			for(var i = o; i >=0; i--){
+		for (var o = 1; o<=5; o++){
+			for(var i = 1; i <=o; i++){
 				d.append(" * ");
 			}
 			var br = document.createElement('br');
