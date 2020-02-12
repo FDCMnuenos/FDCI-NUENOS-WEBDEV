@@ -3,15 +3,15 @@
 <head>
 	<title>NCMyongJavascript</title>
 </head>
-<body>	
+<body style="margin-left: 1%; font-family: sans-serif;">	
 	<script type="text/javascript" src="ncmyongjavascript.js"></script>
 
-	<section style="margin-left: 1%;">
-		<h4>Part 1</h4>
+	<section>
+		<h3>Part 1</h3>
 		<p>Compute sum of odd numbers from 1 to 50: <input type="button" onclick="sumOdd()" value="Result"> </p> 
 	</section>
 
-	<section style="margin-top: 2%; margin-left: 5%;">
+	<section >
 		<h3>Part 2</h3>
 		<p>Compute the Average of Hilary's Grades</p>
 				<table style="width: 15%;">
@@ -83,7 +83,7 @@
 		</table>
 	</section>
 
-	<section style="margin-left: 1%;">
+	<section>
 		<h3>Part 3</h3>
 		<h4>Instructions</h4>
 		<p>- Write a program that will loop from from 0 to 100 and:</p>
@@ -93,11 +93,17 @@
 		  <li>The number is divisible by five and three it must print beepboop</li>
 		</ol>
 		<input type="button" onclick="program()" value="Generate Result">
+		<div id="beepboop">
+		</div>
+
 	</section>	
 	
-	<div id="destination">
-		
-	</div>	
+	<section>
+	<h3>Part 4</h3>
+	<input type="button" onclick="nestLoops()" value="Generate Nested Loop Result">
+	<div id="nestLoop">
+	</div>
+	</section>
 
 
 </body>
