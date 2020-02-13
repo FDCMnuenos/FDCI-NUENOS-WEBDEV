@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NC Myong Javascript Activity 02</title>
+	</head>
+
+	<body style="font-family: sans-serif;">
+		<section>
+			<h3>Part 1</h3>
+			<label>Input Strings : </label><input style="width: 20%;" id="getLength" placeholder="Enter sentence ...">
+			<input type="button" onclick="strLength()" value="Get Result"><br>
+			<table>
+				<tr>
+					<td>Entered Sentence:</td>
+					<td style="color: blue" id="sentence"></td>
+				</tr>
+				<tr>
+					<td>Longest Word:</td>
+					<td style="color: red" id="longword"></td>
+				</tr>
+			</table>
+		</section>
+
+		<section style="margin-top: 5%;">
+			<h3>Part 2</h3>
+			<h4>Prime Number Checker</h4>
+			<label>Enter Number:</label><input type="text" id="toBeChecked">
+			<input type="button" onclick="checkNum()" value="Check">
+			<p>Result: <span id="numChecked"></span></p>
+		</section>
+		
+		<section style="margin-top: 5%;">
+			<form action="#" onsubmit="convertHour(event)" name="myForm">
+				<h3>Part 3</h3>
+				<h4>Hour to Minutes Converter</h4>
+				<label>Enter Hour:</label><input type="text" id="con">
+				<button type="Submit"> Calculate </button> 
+			</form>
+				<p><span id="minCovert"></span></p>
+		</section>
+		<script type="text/javascript" src="ncmyongjavascriptAct02.js"></script>
+	</body>
+</html>
