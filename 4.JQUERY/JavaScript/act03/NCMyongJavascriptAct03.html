@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<h2>Activity # 3</h2>
+	<div id="part1">
+		<h3>Part 1</h2>
+		<form name="myform" onsubmit="profile(event)" action="#">
+			Name: <input type="text" id ="name" required>
+			Age: <input type="text" id ="age" required>
+			<input type="Submit" value="Add">			
+		</form>
+
+		<h4>Final Object</h4>
+		<div id="fObject"></div>
+
+		<h4>Readable Format</h4>
+		<div id="rFormat"></div>
+	</div>
+
+	<br/>
+	<br/>	
+	<div>
+		<h3>Part 2</h3>
+		<form id="products" onsubmit="inventory(event)" action="#">
+			<table>
+				<tr>
+					<td>Name</td>
+					<td>: <input type="text" id="productName" required></td>
+				</tr>
+				<tr>
+					<td>Stocks</td>
+					<td>: <input type="number" id="productStock" required></td>
+				</tr>
+				<tr>
+					<td>Price</td>
+					<td>: <input type="text" id="prodPrice" required></td>
+				</tr>
+			</table>
+			<input type="Submit" value="Add">
+		</form>
+		<h4>Product List</h4>
+		<div id="inventoryList"></div>
+		<input type="button" onclick="compute(event)" value="Calculate for local value for each product">
+		<h4>Product Total Value</h4>
+		<div id="inventorytotal1"></div>
+		<div id="inventorytotal2"></div>
+	</div>
+	<script type="text/javascript" src="ncmyongjavascriptAct03.js"></script>
+</body>
+</html>
