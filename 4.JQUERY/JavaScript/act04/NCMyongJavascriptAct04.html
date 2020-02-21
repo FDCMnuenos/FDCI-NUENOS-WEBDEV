@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body style="font-family: sans-serif;">
+	<form>
+		<h3>Profile</h3>
+		<h5>What's your name?</h5>
+		<input type="text" name="name" required placeholder="Enter your name here...">
+		<h5>Gender</h5>
+		<select name="gender">
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+			<option value="Others">Others</option>
+		</select>
+		<h5>Hobbies</h5>
+		<div id="hobbies"></div>
+		<input type="button" value="Add hobby">
+		<h5>Tell me something about yourself</h5>
+		<textarea id="introduction" onkeypress="textCountCheck(this)" maxlength="20">Enter text here...</textarea>
+		<div id="the-count">
+		    <span id="current">0</span>
+		    <span id="maximum">/20</span>
+		</div>
+
+	</form>
+	<script type="text/javascript" src="ncmyongjavascriptAct04.js"></script>
+</body>
+</html>
