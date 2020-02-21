@@ -17,18 +17,9 @@ function profile(e) {
 		alert("You are only allowed to enter: \n Name - Letters Only \n Age - Numbers Only");
 		return false;
 	}
-	else if(!/^[a-zA-Z]*$/g.test(pProfile.name) && /^\d+(?:\.\d{1,2})?$/g.test(pProfile.age)){
-		alert("You are only allowed to enter: \n Name - Letters Only \n Age - Numbers Only");
-	}
 	else if(!/^[a-zA-Z]*$/g.test(pProfile.name)){
 		alert("Please Enter Letters only.");
 		return false;
-	}
-	else if(isNaN(pProfile.age)){
-		alert("Please Enter Whole Numbers only.");
-	}
-	else if (/^\d+(?:\.\d{1,2})?$/g.test(pProfile.age)){
-		alert("Please Enter Whole Numbers only - decimal.");
 	}
 	else{
 		//push to Object
@@ -55,6 +46,10 @@ function profile(e) {
 var prodInventory = []; 
 function inventory(e){
 	e.preventDefault();
+	//make button enabled again
+	document.getElementById("computeBtn").disabled = false;
+	document.getElementById("inventorytotal1").innerHTML = "";
+	document.getElementById("inventorytotal2").innerHTML = "";
 
 	//Objects - Keys -Values
 	var products = {
@@ -76,12 +71,17 @@ function inventory(e){
 		alert("You are only allowed to enter: \n *Name - Letters Only");
 		return false;
 	}
+	else if(products.prodStock == 0 || products.prodPrice == 0){
+		alert("Please input stock or and price numbers not less then 1");
+		return false;
+	}
 	else{
+
 		//push to Object
 		prodInventory.push(products);
 				//used to convert result to string
 		var myJSON = JSON. stringify(products);
-		document.forms[0].reset();
+		document.getElementById("products").reset();
 
 	        //Display of Inventory List
 	        document.getElementById("inventoryList").innerHTML = "";
@@ -93,17 +93,20 @@ function inventory(e){
 	    }
 }
 
-    function compute() {
-    	//declare variable to old the result of each product price
-        var resProdPrice = 0;
-        var sum = 0;
-        for (let x in prodInventory) {
-        	//equation to get the total
-        	resProdPrice = prodInventory[x].prodStock * prodInventory[x].prodPrice;
-        	//display each product
-            document.getElementById("inventorytotal1").innerHTML += prodInventory[x].prodName + " will have a total value of " + resProdPrice + "<br>";
-            sum += resProdPrice;
-        }
-        	//display total
-        	document.getElementById("inventorytotal2").innerHTML = "Total Value: " + sum ;
+function compute(){
+
+   	//declare variable to old the result of each product price
+    var resProdPrice = 0;
+    var sum = 0;
+    for (let x in prodInventory) {
+   	//equation to get the total
+   	resProdPrice = prodInventory[x].prodStock * prodInventory[x].prodPrice;
+   	//display each product
+    document.getElementById("inventorytotal1").innerHTML += prodInventory[x].prodName + " will have a total value of " + resProdPrice + "<br>";
+    sum += resProdPrice;
     }
+  	//display total
+  	document.getElementById("inventorytotal2").innerHTML = "Total Value: " + sum ;
+
+   	document.getElementById("computeBtn").disabled=true;
+}
