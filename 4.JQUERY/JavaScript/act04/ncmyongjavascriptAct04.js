@@ -11,13 +11,26 @@ function saveHobby(){
     var val = document.getElementById("newCheckbox").value;
     var newCheckHob = document.querySelectorAll(".profHob"); 
     var saveNewHobButton = '<button type="button" id="addhobtn" name="addhob" onclick="addHobby()">Add Hobby</button>';
+    var newtHobby = document.getElementsByName("hobbies").value;
+    var hobbies = document.getElementsByName("hobbies");
+    var sHobbies = new Array;
 
+
+    for(var i=0; i<hobbies.length; i++){
+        if(hobbies[i].type=='checkbox')
+            sHobbies[sHobbies.length]=hobbies[i].value+"\n";
+    }
+
+    console.log(sHobbies);
     if(val == ""){
         alert("Please Enter a Hobby");
         return false;
     }
     else if(val==newCheckHob){
         alert("Hobby already existed");
+    }
+    else if (sHobbies.includes[val]) {
+        alert("dfgdfuaghdsugmjasuergisaerg");
     }
     else if(val==letterFormat){
         alert("You are allowed to enter letters only");
@@ -30,7 +43,6 @@ function saveHobby(){
         document.getElementById("submit").disabled = false;
         document.getElementById("submit").removeAttribute("class", "disabled");
     }
-
 }
 
 function addCheckbox(pId, eTag, type, name, cls, val) {
@@ -62,18 +74,17 @@ function profileForm(){
     var name = document.getElementById("name").value;
     var gender = document.getElementById("gender").value;
     var info = document.getElementById("intro").value;
+    var newtHobby = document.getElementsByName("hobbies").value;
     var hobbies = document.getElementsByName("hobbies");
-    var sHobbies = "";
+    var sHobbies = new Array;
     var countHobbies = 0;
 
-    var x = document.getElementById('profile');
-    var y = document.getElementById('profResult');
 
 
     //function to get checkbox selected items
     for(var i=0; i<hobbies.length; i++){
         if(hobbies[i].type=='checkbox' && hobbies[i].checked==true)
-            sHobbies+=hobbies[i].value+"\n";
+            sHobbies[sHobbies.length]=hobbies[i].value+"\n";
     }
 
     //to count selected checkbox
@@ -82,6 +93,7 @@ function profileForm(){
             countHobbies = countHobbies + 1;
         }
     }
+
 
     //validations for name 
     if (!/^[a-zA-Z]*$/g.test(name)){
@@ -102,16 +114,17 @@ function profileForm(){
         document.getElementById("validation").innerHTML = "Please enter something about yourself"; 
     }
     else{
-    //     document.getElementById("profile").style.display = "none"; 
-    //     document.getElementById("detailDisplay").style.display ="block";
-           document.getElementById("detailDisplay").innerHTML = "Hi " + name + "<br>" + "Your gender is " + gender + "<br>" + "Your hobbies are " + hobbies[m] + "<br>" + "Here is a little fact about yourself: " + info ;
-    // 
-          if (x.style.display === 'none' || y.style.display === 'block') {
-            x.style.display = 'block' + "asdfasdf";
-            y.style.display = 'none' + "5454356456";
-          } else {
-            x.style.display = 'none' + "5454356456";;
-            y.style.display = 'block'+ "asdfasdf";
-          }
+
+        document.getElementById("detailDisplay").innerHTML = "Hi " + name + "<br>" + "Your gender is " + gender + "<br>" + "Your hobbies are " + sHobbies + "<br>" + "Here is a little fact about yourself: " + info ;
+        document.getElementById("goback").style.display = 'block';
+        document.getElementById("profForm").style.display = 'none'; 
+        document.getElementById("profResult").style.display = 'block';
+        document.getElementById("goback").addEventListener('click', function(e){
+            location.reload();
+        })
     }
+}
+
+function goback(){
+        document.getElementById("profForm").style.display = 'block'; 
 }

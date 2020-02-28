@@ -8,7 +8,7 @@
 	<div>
 		<div id="profile">
 			<div id="validation" class="validations" style="color: red; font-size: 12px;"></div>
-			<form id="profForm" style="display: block;">
+			<form id="profForm">
 				<div>
 					<h4>What is your name?</h4>
 					<input type="text" name="name" id="name" placeholder="Enter your name here" required>
@@ -46,10 +46,10 @@
 		</div>
 		<button type="button" id="submit" name="submit" onclick="profileForm()">Submit</button>
 	</form>
-    	<div id="profResult" style="visibility: hidden;"></dir>
+    <form id="profResult">
 	    	<div id="detailDisplay"></div>
-	    	<button type="button" id="goback" name="goback" onclick="goback()">Go Back</button>
-	    </div>
+	    	<button type="button" style="display: none;" id="goback" name="goback" onclick="goback()">Go Back</button>
+	</form>
     </div>
 	<script type="text/javascript" src="ncmyongjavascriptAct04.js"></script>
 </body>
