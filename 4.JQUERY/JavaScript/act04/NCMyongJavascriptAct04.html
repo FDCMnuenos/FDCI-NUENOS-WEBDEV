@@ -1,30 +1,56 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Javascript: Act #4</title>
 </head>
 <body style="font-family: sans-serif;">
-	<form>
-		<h3>Profile</h3>
-		<h5>What's your name?</h5>
-		<input type="text" name="name" required placeholder="Enter your name here...">
-		<h5>Gender</h5>
-		<select name="gender">
-			<option value="Male">Male</option>
-			<option value="Female">Female</option>
-			<option value="Others">Others</option>
-		</select>
-		<h5>Hobbies</h5>
-		<div id="hobbies"></div>
-		<input type="button" value="Add hobby">
-		<h5>Tell me something about yourself</h5>
-		<textarea id="introduction" onkeypress="textCountCheck(this)" maxlength="20">Enter text here...</textarea>
-		<div id="the-count">
+	<h3>Profile</h3>
+	<div>
+		<div id="profile">
+			<div id="validation" class="validations" style="color: red; font-size: 12px;"></div>
+			<form id="profForm" style="display: block;">
+				<div>
+					<h4>What is your name?</h4>
+					<input type="text" name="name" id="name" placeholder="Enter your name here" required>
+					<div id="valName" class="errormessage"></div>
+				</div>
+				<div>
+					<h4>Gender</h4>
+					<select id="gender">
+						<option name="gender" value="male">Male</option>
+						<option name="gender" value="female">Female</option>
+						<option name="gender" value="other">Other</option>
+					</select>
+				</div>
+				<div>
+					<h4>Hobbies</h4>
+					<h5 style="color: red;">Select at least 3</h5>
+					<input type="checkbox" class="profHob" name="hobbies" value="singing">singing <br>
+					<input type="checkbox" class="profHob" name="hobbies" value="dancing">dancing<br>
+					<input type="checkbox" class="profHob" name="hobbies" value="travelling">travelling<br>
+					<input type="checkbox" class="profHob" name="hobbies" value="reading">reading<br>
+					<input type="checkbox" class="profHob" name="hobbies" value="programming">programming<br>
+					<input type="checkbox" class="profHob" name="hobbies" value="daydreaming">daydreaming<br>
+					<input type="checkbox" class="profHob" name="hobbies" value="sleeping">sleeping<br>
+					<div id="newhobbies"></div>
+					<div id="addHobDiv">
+						<button type="button" id="addhobtn" name="addhob" onclick="addHobby()">Add Hobby</button>
+					</div>
+					<div id="valHobbies" class="errormessage"></div>
+				</div>
+		<h4>Tell me something about yourself</h4>
+		<textarea id="intro" name="intro" onkeypress="textCountCheck(this)" maxlength="20" placeholder="Enter text here..." required></textarea>
+		<div id="charCount">
 		    <span id="current">0</span>
 		    <span id="maximum">/20</span>
 		</div>
-
+		<button type="button" id="submit" name="submit" onclick="profileForm()">Submit</button>
 	</form>
+    	<div id="profResult" style="visibility: hidden;"></dir>
+	    	<div id="detailDisplay"></div>
+	    	<button type="button" id="goback" name="goback" onclick="goback()">Go Back</button>
+	    </div>
+    </div>
 	<script type="text/javascript" src="ncmyongjavascriptAct04.js"></script>
 </body>
 </html>
