@@ -1,6 +1,7 @@
 var letterFormat = /^[A-Za-z]+$/;
 
 function addHobby(){
+    //declare val to create new checkbox
     var hobbyCheckbox = '<input type="text" name="newCheckHob" id="newCheckbox" required> <br> <button type="button" id="saveHobBtn" name="SaveHobby" onclick="saveHobby()">Save</button>';
     document.getElementById("addHobDiv").innerHTML = hobbyCheckbox; 
     document.getElementById("submit").disabled = true; 
@@ -10,33 +11,30 @@ function addHobby(){
 function saveHobby(){
     var val = document.getElementById("newCheckbox").value;
     var newCheckHob = document.querySelectorAll(".profHob"); 
+    //declare var for save button
     var saveNewHobButton = '<button type="button" id="addhobtn" name="addhob" onclick="addHobby()">Add Hobby</button>';
     var newtHobby = document.getElementsByName("hobbies").value;
     var hobbies = document.getElementsByName("hobbies");
-    var sHobbies = new Array;
 
 
+    //validations
+    //avoid hobby duplicate
     for(var i=0; i<hobbies.length; i++){
-        if(hobbies[i].type=='checkbox')
-            sHobbies[sHobbies.length]=hobbies[i].value+"\n";
+        if(hobbies[i].value==val){
+            return alert("Hobby Already Exist. Please enter another hobby.");;
+        }
     }
-
-    console.log(sHobbies);
+    //If field is empty
     if(val == ""){
         alert("Please Enter a Hobby");
         return false;
     }
-    else if(val==newCheckHob){
-        alert("Hobby already existed");
-    }
-    else if (sHobbies.includes[val]) {
-        alert("dfgdfuaghdsugmjasuergisaerg");
-    }
+    //enter letters only
     else if(val==letterFormat){
         alert("You are allowed to enter letters only");
     }
     else{
-         document.getElementById("addHobDiv").innerHTML = saveNewHobButton;
+        document.getElementById("addHobDiv").innerHTML = saveNewHobButton;
 
         addCheckbox("newhobbies", "input", "checkbox", "hobbies", "profHob", val); 
 
@@ -45,6 +43,8 @@ function saveHobby(){
     }
 }
 
+
+//function for checkbox - group
 function addCheckbox(pId, eTag, type, name, cls, val) {
     var parent = document.getElementById(pId);
     var newCheckbox = document.createElement(eTag);
