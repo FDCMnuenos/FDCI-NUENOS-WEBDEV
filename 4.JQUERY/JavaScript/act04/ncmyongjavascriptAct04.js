@@ -17,7 +17,7 @@ function saveHobby(){
     var hobbies = document.getElementsByName("hobbies");
 
 
-    //validations
+    //validations for Hobby
     //avoid hobby duplicate
     for(var i=0; i<hobbies.length; i++){
         if(hobbies[i].value==val){
@@ -43,7 +43,6 @@ function saveHobby(){
     }
 }
 
-
 //function for checkbox - group
 function addCheckbox(pId, eTag, type, name, cls, val) {
     var parent = document.getElementById(pId);
@@ -61,14 +60,12 @@ function addCheckbox(pId, eTag, type, name, cls, val) {
     parent.appendChild(br);
 }
 
-
 function textCountCheck(el){
     var textArea = el.value.length;
     var charactersLeft = 0 + textArea;
     var count = document.getElementById('current');
     count.innerHTML = charactersLeft;
 }
-
 function profileForm(){
     var form = document.getElementById("profForm");
     var name = document.getElementById("name").value;
@@ -78,8 +75,6 @@ function profileForm(){
     var hobbies = document.getElementsByName("hobbies");
     var sHobbies = new Array;
     var countHobbies = 0;
-
-
 
     //function to get checkbox selected items
     for(var i=0; i<hobbies.length; i++){
@@ -93,7 +88,6 @@ function profileForm(){
             countHobbies = countHobbies + 1;
         }
     }
-
 
     //validations for name 
     if (!/^[a-zA-Z]*$/g.test(name)){
